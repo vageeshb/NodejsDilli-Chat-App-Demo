@@ -1,0 +1,67 @@
+body {
+  background: black;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.login {
+  width: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25% 0;
+  text-align: center;
+}
+.login input, .login input:focus {
+  width: 350px;
+  background: black;
+  border: none;
+  border-bottom: 1px solid white;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  outline: 0;
+}
+.chat {
+  display: none;
+}
+.messages {
+  width: auto;
+  min-height: 480px;
+  max-height: 480px;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 9%;
+  overflow-y: auto;
+  background: #E5E5E5;
+}
+.messages > div {
+  margin: 10px;
+}
+
+.controls {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.controls > input {
+  width: 100%;
+  border: none;
+  line-height: 2;
+  font-size: 24px;
+  text-align: center;
+  background: #E5E5E5;
+}
+
+.info {
+  text-align: center;
+  color: maroon;
+  font-style: oblique;
+}
+
+.current-user > .name {
+  color: blueviolet;
+}
+.other-user > .name {
+  color: chocolate;
+}
