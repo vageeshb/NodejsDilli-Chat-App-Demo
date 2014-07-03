@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Chat App Demo
+    link(rel='stylesheet', href='css/style.css', type="text/css")
+    script(src="js/jquery.min.js")
+    script(src='/socket.io/socket.io.js')
+    script(src='js/app.js')
+  body
+    section.login
+      input(type='text' name='username' id='username' placeholder='Please enter your name')
+      input(type='password' name='password' id='password' placeholder='Please enter your password')
+      input(type='button')
+    section.chat
+      .messages
+      .users
+        .usersHead
+        ul.userList
+      .controls
+        input#newMessage(type="text", name='New Message', placeholder="Type your new message here")
