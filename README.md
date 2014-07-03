@@ -1,4 +1,4 @@
-# Chat Application Demo #
+# Chat Application Demo with Online User List#
 
 Demo chat application code to showcase the usage of Socket.IO \
 
@@ -6,4 +6,4 @@ Demo chat application code to showcase the usage of Socket.IO \
 
 * Git clone repository
 * Run `npm install`
-* Run `node app.js`
+* Run `npm start`   or   Run `node app.js`
