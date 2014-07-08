@@ -26,12 +26,19 @@ io.sockets.on('connection', function (socket) {
   // Store Socket
   connectedSockets[socket.id] = null;
 
+  
+    
   // Handle New User Registrations
   socket.on('newUser', function(data) {
+      
     // Save username
     connectedSockets[socket.id] = data.username;
+      
     // Broadcast to other nodes
     socket.broadcast.emit('newUserJoined', data.username);
+      
+    // Send a signal to all users with the updated user list
+    io.sockets.emit('signal', connectedSockets);
   });
 
   // Handle new message
@@ -47,6 +54,8 @@ io.sockets.on('connection', function (socket) {
     delete connectedSockets[socket.id];
     // Broadcast user left event to other connected nodes
     socket.broadcast.emit('userLeft', username);
+    // Send a signal to all users with the updated user list
+    io.sockets.emit('signal', connectedSockets);
   });
 
 });

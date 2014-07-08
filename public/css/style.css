@@ -35,7 +35,7 @@ body {
   background: #E5E5E5;
 }
 .messages > div {
-  margin: 10px;
+  margin: 10px 204px 10px 10px;
 }
 
 .controls {
@@ -64,4 +64,23 @@ body {
 }
 .other-user > .name {
   color: chocolate;
+}
+
+
+/*by rajeshwerkushwaha for Online User List*/
+
+.users {
+    background: none repeat scroll 0 0 #e5e5e5;
+    left: 886px;
+    margin: 9% auto 0;
+    max-height: 480px;
+    min-height: 480px;
+    overflow-y: auto;
+    position: absolute;
+    top: -1px;
+    width: 200px;
+    border-left: 1px solid;
+}
+.userList li{
+    color: green;
 }

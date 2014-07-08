@@ -16,15 +16,18 @@ $(document).ready( function () {
 
         // Send new event to server
         socket.emit('newUser', {username: currentUser});
-        
+
         $('.login').css('display', 'none');
         $('.chat').css('display', 'block');
         
         var entryMessage = "<div class='info'><strong>You just joined the chat!</strong></div>";
+        var userMessageHead = "<div class='info'><strong>Online User</strong></div>";  
         $('.messages').append(entryMessage);
-        
+        $('.usersHead').append(userMessageHead);
+          
         focusLast();
         $('#newMessage').focus();
+        
       }
     }
   });
@@ -33,6 +36,7 @@ $(document).ready( function () {
   socket.on('newUserJoined', function(name) {
     var newUser = "<div class='info'><strong>" + name + " joined the chat!</strong></div>";
     $('.messages').append(newUser);
+      
   });
 
   // Handles new message received
@@ -69,5 +73,12 @@ $(document).ready( function () {
     focusLast();
   });
 
-
+  // Handle Online User List 
+  socket.on('signal', function(obj) {
+    var templi = '';
+    for(var temp in obj){
+    	templi = templi+ "<li>" + obj[temp] + "</li>";    	
+    }
+    $('.userList').html(templi);    
+  });
 });
